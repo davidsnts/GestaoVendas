@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaVendas.Models;
+using SistemaVendas.Uteis;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,6 +13,8 @@ namespace SistemaVendas.Controllers
     {
         public IActionResult Index()
         {
+            DAL objDAL = new DAL();
+            //objDAL.ExecutarComandoSQL("INSERT INTO VENDEDOR(nome, email, senha) values ('filipe', 'filipe@email.com', '12345')");
             return View();
         }
 
