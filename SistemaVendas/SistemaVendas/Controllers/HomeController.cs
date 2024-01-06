@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SistemaVendas.Models;
 using SistemaVendas.Uteis;
 using System;
@@ -18,16 +19,42 @@ namespace SistemaVendas.Controllers
             return View();
         }
         [HttpGet]        
-        public IActionResult Login()
+        public IActionResult Login(int? id)
         {
-            //DAL objDAL = new DAL();            
+            if (id!= null)
+            {
+                if (id == 0)
+                {
+                    HttpContext.Session.SetString("IdUsuarioLogado", string.Empty);
+                    HttpContext.Session.SetString("NomeUsuarioLogado", string.Empty);
+                }
+            } 
             return View();
         }
 
         [HttpPost]
         public IActionResult Login(LoginModel login)
         {
-            Boolean longinOK = login.ValidarLogin();        
+            if (ModelState.IsValid) 
+            { 
+                Boolean longinOK = login.ValidarLogin(); 
+                if (longinOK)
+                {
+                    HttpContext.Session.SetString("IdUsuarioLogado", login.Id);
+                    HttpContext.Session.SetString("NomeUsuarioLogado", login.Nome);
+                    return RedirectToAction("Menu", "Home");
+                }
+                else
+                {
+                    TempData["ErrorLogin"] = "Email ou senha são inválidos";
+                }
+            }
+                
+            return View();
+        }
+
+        public IActionResult Menu()
+        {
             return View();
         }
 

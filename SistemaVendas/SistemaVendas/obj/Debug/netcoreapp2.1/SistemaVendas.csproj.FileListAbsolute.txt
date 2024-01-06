@@ -36,3 +36,4 @@ C:\Users\Estudos\Documents\GitHub\GestaoVendas\SistemaVendas\SistemaVendas\obj\D
 C:\Users\Estudos\Documents\GitHub\GestaoVendas\SistemaVendas\SistemaVendas\obj\Debug\netcoreapp2.1\SistemaVendas.genruntimeconfig.cache
 C:\Users\Estudos\Documents\GitHub\GestaoVendas\SistemaVendas\SistemaVendas\obj\Debug\netcoreapp2.1\SistemaVendas.csproj.CopyComplete
 C:\Users\Estudos\Documents\GitHub\GestaoVendas\SistemaVendas\SistemaVendas\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\Estudos\Documents\GitHub\GestaoVendas\SistemaVendas\SistemaVendas\obj\Debug\netcoreapp2.1\Razor\Views\Home\Menu.cshtml.g.cs
