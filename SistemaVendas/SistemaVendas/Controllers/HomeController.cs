@@ -13,8 +13,14 @@ namespace SistemaVendas.Controllers
     {
         public IActionResult Index()
         {
-            DAL objDAL = new DAL();
+            //DAL objDAL = new DAL();
             //objDAL.ExecutarComandoSQL("INSERT INTO VENDEDOR(nome, email, senha) values ('filipe', 'filipe@email.com', '12345')");
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+            //DAL objDAL = new DAL();            
             return View();
         }
 
