@@ -1,0 +1,33 @@
+﻿<h3>Lista de clientes</h3>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>CPF</td>
+            <td>Email</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in (List<ClienteModel>) ViewBag.ListaClientes)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nome</td>
+                <td>@item.cpf_cnpj</td>
+                <td>@item.Email</td>               
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<button class="btn btn-block btn-primary" type="button" onclick="Cadastrar()">Cadastrar Cliente</button>
+
+<script>
+    function Cadastrar() 
+    {
+        window.location.href = "../Cliente/Cadastro"
+    }
+</script>
